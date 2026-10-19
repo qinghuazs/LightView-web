@@ -50,7 +50,7 @@
   }
 
   // 下载按钮：从 GitHub Releases 取最新版本的 dmg；取不到就落到 Releases 页面
-  fetch("https://api.github.com/repos/qinghuazs/LightView/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
+  fetch("https://api.github.com/repos/qinghuazs/LightView-web/releases/latest", { headers: { Accept: "application/vnd.github+json" } })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (rel) {
       if (!rel) return;
