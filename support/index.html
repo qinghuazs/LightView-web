@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — LightView</title>
+<meta name="description" content="Help, FAQ and how to report an issue with LightView for macOS.">
+<link rel="icon" href="/favicon.png">
+<link rel="canonical" href="https://lightview.app/support/">
+<link rel="alternate" hreflang="en" href="https://lightview.app/support/">
+<link rel="alternate" hreflang="zh-Hans" href="https://lightview.app/zh/support/">
+<meta property="og:title" content="Support — LightView">
+<meta property="og:description" content="Help, FAQ and how to report an issue with LightView for macOS.">
+<meta property="og:image" content="https://lightview.app/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="wrap top">
+  <a class="brand" href="/"><img src="/assets/icon.png" alt="" width="40" height="40">LightView</a>
+  <nav aria-label="Site navigation">
+    <a href="/#demo">See it</a>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#keys">Shortcuts</a>
+    <a href="/#download">Download</a>
+    <a href="/support/">Support</a>
+    <a class="lang" href="/zh/" lang="zh-CN">中文</a>
+  </nav>
+  <button class="menu-btn" type="button" id="menu-open" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</header>
+<div class="overlay" id="overlay">
+  <button class="menu-btn" type="button" id="menu-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <a href="/#demo">See it</a><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#keys">Shortcuts</a><a href="/#download">Download</a><a href="/support/">Support</a><a href="/zh/">中文</a>
+</div>
+
+<main>
+  <article class="wrap article">
+    <h1>Support</h1>
+    <p class="date">LightView for macOS</p>
+    <div class="summary"><p>Found a bug or have a question? Open an issue on <a href="https://github.com/qinghuazs/LightView/issues">GitHub</a>. Please include your macOS version and the image format involved. Release notes are on the <a href="https://github.com/qinghuazs/LightView/releases">releases page</a>.</p></div>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Why does LightView ask me to grant access to a folder?</summary>
+        <p>LightView runs in the macOS App Sandbox, so double-clicking an image only gives it that one file. To browse the rest of the folder it needs your permission once. Click "Grant Folder Access", confirm the folder that is already selected, and LightView remembers it. Granting a parent folder covers everything inside it.</p>
+      </details>
+      <details>
+        <summary>How do I revoke access to a folder?</summary>
+        <p>Open Settings (⌘,) and look under "Folder Access". Select a folder and click Remove. The next time you open an image there, LightView will ask again.</p>
+      </details>
+      <details>
+        <summary>The arrow keys do nothing.</summary>
+        <p>Make sure the image window is in front and that no text field has focus. If the status bar shows "Folder unavailable", the disk or folder has gone away; browsing resumes when it is back.</p>
+      </details>
+      <details>
+        <summary>Can I set LightView as the default image viewer?</summary>
+        <p>Yes. In Finder, right-click an image, choose "Get Info", pick LightView under "Open with" and click "Change All".</p>
+      </details>
+      <details>
+        <summary>Undo after moving to Trash says it could not restore the file.</summary>
+        <p>Sandboxed apps cannot reach into the Trash. Open the Trash in Finder, right-click the file and choose "Put Back".</p>
+      </details>
+      <details>
+        <summary>Which formats are supported?</summary>
+        <p>Anything macOS itself can decode: JPEG, PNG, HEIC/HEIF, GIF, WebP, TIFF, BMP, most camera RAW files and more. Animated GIF, APNG and WebP play automatically.</p>
+      </details>
+      <details>
+        <summary>How do I uninstall?</summary>
+        <p>Drag LightView from Applications to the Trash. To remove its settings as well, delete <kbd>~/Library/Containers/com.lightview.app</kbd>.</p>
+      </details>
+    </div>
+
+    <h2>Privacy</h2>
+    <p>LightView collects no data at all. See the <a href="/privacy/">privacy policy</a>.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>LightView</span>
+    <a href="https://github.com/qinghuazs/LightView">Source on GitHub</a>
+    <a href="https://github.com/qinghuazs/LightView/issues">Report an issue</a>
+    <a href="https://github.com/qinghuazs/LightView/releases">Release notes</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/support/">Support</a>
+    <span>© 2026 WANG XINGLEI</span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

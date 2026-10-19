@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LightView — A lightweight image viewer for macOS</title>
+<meta name="description" content="Double-click one photo and browse the whole folder with the arrow keys. No importing, no library, no network. macOS 13 or later.">
+<link rel="icon" href="/favicon.png">
+<link rel="canonical" href="https://lightview.app/">
+<link rel="alternate" hreflang="en" href="https://lightview.app/">
+<link rel="alternate" hreflang="zh-Hans" href="https://lightview.app/zh/">
+<meta property="og:title" content="LightView — A lightweight image viewer for macOS">
+<meta property="og:description" content="Double-click one photo and browse the whole folder with the arrow keys. No importing, no library, no network. macOS 13 or later.">
+<meta property="og:image" content="https://lightview.app/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="wrap top">
+  <a class="brand" href="/"><img src="/assets/icon.png" alt="" width="40" height="40">LightView</a>
+  <nav aria-label="Site navigation">
+    <a href="/#demo">See it</a>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#keys">Shortcuts</a>
+    <a href="/#download">Download</a>
+    <a href="/support/">Support</a>
+    <a class="lang" href="/zh/" lang="zh-CN">中文</a>
+  </nav>
+  <button class="menu-btn" type="button" id="menu-open" aria-label="Open menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</header>
+<div class="overlay" id="overlay">
+  <button class="menu-btn" type="button" id="menu-close" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <a href="/#demo">See it</a><a href="/#how">How it works</a><a href="/#features">Features</a><a href="/#keys">Shortcuts</a><a href="/#download">Download</a><a href="/support/">Support</a><a href="/zh/">中文</a>
+</div>
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <p class="tag">LightView, <em>for</em> macOS</p>
+      <h1>Double-click one photo.<br>Browse the <em>whole</em> folder.</h1>
+      <p class="lead">A native Mac image viewer. Open any image and LightView turns its folder into a browsing session. Flip through with the arrow keys. No importing, no library, no network.</p>
+      <div class="cta">
+        <a class="btn store" href=""><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14 5.9c.6-.8 1.1-1.9.9-3-.9.1-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg> Mac App Store</a>
+        <a class="btn dl" href="https://github.com/qinghuazs/LightView/releases/latest"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M6 9l4 4 4-4M4 16h12"/></svg> Download for Mac</a>
+        <div class="meta">Version <span class="ver">1.0.0</span>, macOS 13 or later<br>Free. Sandboxed, signed and notarized by Apple.</div>
+      </div>
+    </div>
+    <div class="arch" aria-hidden="true">
+            <svg viewBox="0 0 600 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="hsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E9E3D3"/><stop offset=".6" stop-color="#D9C6B0"/><stop offset="1" stop-color="#C9A88C"/></linearGradient>
+          <linearGradient id="hfar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9B3A0"/><stop offset="1" stop-color="#8C9A84"/></linearGradient>
+          <linearGradient id="hmid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6F7F6B"/><stop offset="1" stop-color="#4E5D4C"/></linearGradient>
+          <linearGradient id="hnear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3E4B40"/><stop offset="1" stop-color="#2D3A31"/></linearGradient>
+        </defs>
+        <rect width="600" height="800" fill="url(#hsky)"/>
+        <circle cx="400" cy="250" r="64" fill="#F3E6CF"/>
+        <path d="M0 470 L90 400 L170 440 L260 360 L350 430 L450 340 L530 410 L600 380 L600 800 L0 800Z" fill="url(#hfar)"/>
+        <path d="M0 560 L80 500 L160 540 L250 470 L340 540 L430 480 L520 550 L600 500 L600 800 L0 800Z" fill="url(#hmid)"/>
+        <path d="M0 660 L70 620 L150 650 L240 600 L330 650 L420 610 L510 660 L600 620 L600 800 L0 800Z" fill="url(#hnear)"/>
+        <g stroke="#2D3A31" stroke-width="1.2" fill="none" opacity=".55">
+          <path d="M60 800 C70 700 40 640 90 560"/><path d="M90 560 c-20 -10 -40 -8 -55 -25"/><path d="M85 610 c18 -8 32 -4 48 -22"/>
+        </g>
+      </svg>
+      <div class="quote">"A folder is an album. Turning the page is the whole interaction."</div>
+    </div>
+  </section>
+
+  <svg class="vine" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 10 250 70 400 40 S650 10 800 40 S1050 70 1200 40" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+
+  <section class="block" id="demo">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>This is what it looks like. <em>Nothing</em> more.</h2>
+        <p class="sub">A web replica of the LightView window: a dark canvas, one status bar, arrow keys to navigate. Try ← →.</p>
+      </div>
+      <div class="frame reveal">
+        <div class="window" id="win" tabindex="0" aria-label="Press ← → to switch">
+          <div class="titlebar">
+            <div style="display:flex;align-items:center">
+              <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="tb-left">
+                <button type="button" id="prev" aria-label="Previous"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3 5 8l5 5"/></svg></button>
+                <button type="button" id="next" aria-label="Next"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 3 5 5-5 5"/></svg></button>
+              </div>
+            </div>
+            <div class="tb-title" id="title">DSC_0214.jpg</div>
+            <div class="tb-tools" aria-hidden="true">
+              <button type="button" tabindex="-1">−</button>
+              <button type="button" class="zoom" tabindex="-1">42%</button>
+              <button type="button" tabindex="-1">+</button>
+              <button type="button" tabindex="-1"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="2.5" width="11" height="11" rx="2"/><path d="M5.5 8h5M8 5.5v5"/></svg></button>
+            </div>
+          </div>
+          <div class="canvas">
+            <div class="hint">Press <kbd>←</kbd> <kbd>→</kbd> to switch</div>
+            <svg class="photo on" viewBox="0 0 900 600" role="img" aria-label="Sunset over mountains">
+              <defs>
+                <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3B4C86"/><stop offset=".55" stop-color="#E88A5A"/><stop offset="1" stop-color="#F6C99A"/></linearGradient>
+                <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2C4A"/><stop offset="1" stop-color="#1B1A2E"/></linearGradient>
+                <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A3F63"/><stop offset="1" stop-color="#2B2540"/></linearGradient>
+              </defs>
+              <rect width="900" height="600" fill="url(#sky1)"/>
+              <circle cx="620" cy="300" r="58" fill="#FFD9A8"/>
+              <path d="M0 420 L140 300 L260 380 L380 260 L500 360 L640 250 L760 340 L900 280 L900 600 L0 600Z" fill="url(#m2)"/>
+              <path d="M0 470 L120 400 L230 450 L360 380 L470 450 L600 390 L720 460 L820 410 L900 440 L900 600 L0 600Z" fill="url(#m1)"/>
+            </svg>
+            <svg class="photo" viewBox="0 0 600 800" role="img" aria-label="Seaside">
+              <defs>
+                <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FBBE8"/><stop offset="1" stop-color="#E9F1F7"/></linearGradient>
+                <linearGradient id="sea2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E6FA8"/><stop offset="1" stop-color="#1F4F7C"/></linearGradient>
+              </defs>
+              <rect width="600" height="800" fill="url(#sky2)"/>
+              <rect y="430" width="600" height="370" fill="url(#sea2)"/>
+              <path d="M0 470 Q75 455 150 470 T300 470 T450 470 T600 470 V485 Q525 500 450 485 T300 485 T150 485 T0 485Z" fill="#7FB6DC" opacity=".6"/>
+              <path d="M0 800 L0 700 Q180 640 320 690 Q470 740 600 700 L600 800Z" fill="#E7D6B4"/>
+              <circle cx="470" cy="150" r="34" fill="#FFF6DA"/>
+            </svg>
+            <svg class="photo" viewBox="0 0 900 600" role="img" aria-label="Forest">
+              <defs>
+                <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D7E6D0"/><stop offset="1" stop-color="#9DBD97"/></linearGradient>
+                <linearGradient id="t3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F5D3A"/><stop offset="1" stop-color="#1B3A25"/></linearGradient>
+              </defs>
+              <rect width="900" height="600" fill="url(#sky3)"/>
+              <g fill="url(#t3)">
+                <path d="M80 600 L80 320 L40 330 L110 160 L180 330 L140 320 L140 600Z"/>
+                <path d="M250 600 L250 280 L200 295 L290 90 L380 295 L330 280 L330 600Z"/>
+                <path d="M470 600 L470 340 L430 350 L500 200 L570 350 L530 340 L530 600Z"/>
+                <path d="M660 600 L660 260 L600 280 L700 60 L800 280 L740 260 L740 600Z"/>
+                <path d="M850 600 L850 360 L820 370 L870 260 L920 370 L890 360 L890 600Z"/>
+              </g>
+              <rect y="520" width="900" height="80" fill="#294B33"/>
+            </svg>
+          </div>
+          <div class="statusbar">
+            <span id="s-name">DSC_0214.jpg</span>
+            <span id="s-size">6000 × 4000</span>
+            <span><em id="s-zoom">42%</em><em id="s-index">14 / 168</em></span>
+          </div>
+        </div>
+      </div>
+      <p class="demo-caption reveal">In the real window the status bar shows the file name, pixel size, zoom level and your position in the folder, exactly like this.</p>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Three steps. <em>No</em> fourth.</h2>
+        <p class="sub">Nothing to import, no library to build. The folder is the album.</p>
+      </div>
+      <div class="cards">
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/></svg></div>
+          <h3>Double-click any image</h3>
+          <p>From Finder, the Desktop, Downloads or a USB drive. Dragging an image or a whole folder onto the window works too.</p>
+        </div>
+        <div class="card reveal clay">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 6l-6 6 6 6"/></svg></div>
+          <h3>Press <kbd>←</kbd> <kbd>→</kbd></h3>
+          <p>LightView has already scanned the folder, in the same order as Finder. A two-finger swipe on the trackpad works as well.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></div>
+          <h3>Close it when you are done</h3>
+          <p>No database or cache folder is left on your disk. The next double-click is just as fast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="vine" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C200 70 300 10 500 40 S800 70 1000 40 S1150 10 1200 40" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+
+  <section class="block" id="features">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Everything you need, <em>nothing</em> you don't.</h2>
+        <p class="sub">Written in Swift and AppKit with no third-party dependencies. The whole app is 2.4 MB.</p>
+      </div>
+      <div class="cards six">
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+          <h3>Every format</h3>
+          <p>JPEG, PNG, HEIC, GIF, WebP, TIFF, RAW and anything else macOS can decode. Animated images play automatically.</p>
+        </div>
+        <div class="card reveal clay">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>Big images stay smooth</h3>
+          <p>Images are decoded at display size and only at full resolution past 100%. Neighbours are decoded ahead of time, so the next page is instant.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5M11 8v6M8 11h6"/></svg></div>
+          <h3>Zoom follows the pointer</h3>
+          <p>⌘ plus scroll, or pinch, zooms around the pointer. Double-click toggles between fit-to-window and 100%.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M5.5 8h2M5.5 11h2M5.5 14h2"/></svg></div>
+          <h3>Gallery and five sort orders</h3>
+          <p>Press ⌘T for a thumbnail sidebar of the whole folder. Sort by name, date modified, date created, size or random, optionally reversed.</p>
+        </div>
+        <div class="card reveal clay">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M12 11v5M9.5 13.5 12 11l2.5 2.5"/></svg></div>
+          <h3>It notices folder changes</h3>
+          <p>Files added, removed or renamed outside LightView show up immediately. Ejected drives resume when plugged back in; iCloud placeholders download on demand.</p>
+        </div>
+        <div class="card reveal">
+          <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 10a8 8 0 0 1 14-4l2 2"/><path d="M20 4v4h-4"/><path d="M20 14a8 8 0 0 1-14 4l-2-2"/><path d="M4 20v-4h4"/></svg></div>
+          <h3>Undo a delete</h3>
+          <p>⌘⌫ moves to the Trash, ⌘Z brings it back. No confirmation dialog by default; turn one on in Settings if you prefer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="keys">
+    <div class="wrap">
+      <div class="reveal">
+        <h2>Keyboard shortcuts</h2>
+        <p class="sub">The arrow keys always turn the page, even while zoomed in. Pan by dragging or two-finger scrolling.</p>
+      </div>
+      <div class="keys reveal">
+        <table>
+          <tr><td>Previous / Next</td><td><kbd>←</kbd> <kbd>→</kbd></td></tr>
+          <tr><td>First / Last</td><td><kbd>Home</kbd> <kbd>End</kbd></td></tr>
+          <tr><td>Zoom in / out</td><td><kbd>⌘</kbd><kbd>+</kbd> <kbd>⌘</kbd><kbd>−</kbd></td></tr>
+          <tr><td>Actual size / Fit to window</td><td><kbd>⌘</kbd><kbd>0</kbd> <kbd>⌘</kbd><kbd>9</kbd></td></tr>
+          <tr><td>Rotate left / right</td><td><kbd>⌘</kbd><kbd>L</kbd> <kbd>⌘</kbd><kbd>R</kbd></td></tr>
+          <tr><td>Full screen</td><td><kbd>⌃</kbd><kbd>⌘</kbd><kbd>F</kbd></td></tr>
+        </table>
+        <table>
+          <tr><td>Gallery / Image info</td><td><kbd>⌘</kbd><kbd>T</kbd> <kbd>⌘</kbd><kbd>I</kbd></td></tr>
+          <tr><td>Hide / show interface</td><td><kbd>Tab</kbd></td></tr>
+          <tr><td>Copy image / Copy path</td><td><kbd>⌘</kbd><kbd>C</kbd> <kbd>⌥</kbd><kbd>⌘</kbd><kbd>C</kbd></td></tr>
+          <tr><td>Show in Finder</td><td><kbd>⇧</kbd><kbd>⌘</kbd><kbd>R</kbd></td></tr>
+          <tr><td>Move to Trash / Undo</td><td><kbd>⌘</kbd><kbd>⌫</kbd> <kbd>⌘</kbd><kbd>Z</kbd></td></tr>
+          <tr><td>Open / Settings</td><td><kbd>⌘</kbd><kbd>O</kbd> <kbd>⌘</kbd><kbd>,</kbd></td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <svg class="vine" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 10 250 70 400 40 S650 10 800 40 S1050 70 1200 40" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+
+  <section class="block" id="download">
+    <div class="wrap download">
+      <div class="reveal">
+        <h2>Free. <em>Install</em> and go.</h2>
+        <p class="sub">Get it from the Mac App Store, or download the notarized disk image and drag LightView to Applications.</p>
+        <div class="cta">
+          <a class="btn store" href=""><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.8 3-.8s1.8.8 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.7zM14 5.9c.6-.8 1.1-1.9.9-3-.9.1-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg> Mac App Store</a>
+          <a class="btn dl" href="https://github.com/qinghuazs/LightView/releases/latest"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10M6 9l4 4 4-4M4 16h12"/></svg> Download <span class="ver">1.0.0</span></a>
+          <div class="meta">macOS 13 or later, Apple silicon and Intel<br><span id="dl-size">2.4 MB</span>, <a href="https://github.com/qinghuazs/LightView/releases">all releases</a></div>
+        </div>
+        <p class="note">LightView runs in the macOS App Sandbox. The first time you open an image in a folder it asks you to grant access to that folder once, then remembers it. Nothing is read outside the folders you choose, and nothing ever leaves your Mac. See the <a href="/privacy/">privacy policy</a>.</p>
+      </div>
+      <div class="how reveal">
+        <h3>Make it the default viewer</h3>
+        <ol>
+          <li>In Finder, right-click any image and choose "Get Info".</li>
+          <li>Under "Open with", pick LightView.</li>
+          <li>Click "Change All" so every image of that type opens in LightView.</li>
+        </ol>
+        <h3>Uninstall</h3>
+        <ol>
+          <li>Drag LightView from Applications to the Trash.</li>
+          <li>Settings live in <kbd>~/Library/Containers/com.lightview.app</kbd>; delete that folder too if you like.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>LightView</span>
+    <a href="https://github.com/qinghuazs/LightView">Source on GitHub</a>
+    <a href="https://github.com/qinghuazs/LightView/issues">Report an issue</a>
+    <a href="https://github.com/qinghuazs/LightView/releases">Release notes</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/support/">Support</a>
+    <span>© 2026 WANG XINGLEI</span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

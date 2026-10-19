@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>支持 — LightView</title>
+<meta name="description" content="LightView for macOS 的常见问题与反馈方式。">
+<link rel="icon" href="/favicon.png">
+<link rel="canonical" href="https://lightview.app/zh/support/">
+<link rel="alternate" hreflang="en" href="https://lightview.app/support/">
+<link rel="alternate" hreflang="zh-Hans" href="https://lightview.app/zh/support/">
+<meta property="og:title" content="支持 — LightView">
+<meta property="og:description" content="LightView for macOS 的常见问题与反馈方式。">
+<meta property="og:image" content="https://lightview.app/assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;500;600&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="wrap top">
+  <a class="brand" href="/zh/"><img src="/assets/icon.png" alt="" width="40" height="40">LightView</a>
+  <nav aria-label="页面导航">
+    <a href="/zh/#demo">看看</a>
+    <a href="/zh/#how">用法</a>
+    <a href="/zh/#features">功能</a>
+    <a href="/zh/#keys">快捷键</a>
+    <a href="/zh/#download">下载</a>
+    <a href="/zh/support/">支持</a>
+    <a class="lang" href="/" lang="en">English</a>
+  </nav>
+  <button class="menu-btn" type="button" id="menu-open" aria-label="打开菜单">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+</header>
+<div class="overlay" id="overlay">
+  <button class="menu-btn" type="button" id="menu-close" aria-label="关闭菜单">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <a href="/zh/#demo">看看</a><a href="/zh/#how">用法</a><a href="/zh/#features">功能</a><a href="/zh/#keys">快捷键</a><a href="/zh/#download">下载</a><a href="/zh/support/">支持</a><a href="/">English</a>
+</div>
+
+<main>
+  <article class="wrap article">
+    <h1>支持</h1>
+    <p class="date">LightView for macOS</p>
+    <div class="summary"><p>遇到问题或有疑问？到 <a href="https://github.com/qinghuazs/LightView/issues">GitHub Issues</a> 提一条，请附上 macOS 版本和涉及的图片格式。更新记录见<a href="https://github.com/qinghuazs/LightView/releases">发布页</a>。</p></div>
+
+    <h2>常见问题</h2>
+    <div class="faq">
+      <details>
+        <summary>为什么 LightView 会让我授权文件夹？</summary>
+        <p>LightView 运行在 macOS 沙盒里，双击一张图片只能拿到那一个文件。要浏览文件夹里的其他图片，需要你授权一次。点"授权文件夹"，在已定位好的文件夹上确认即可，之后会记住。授权上级文件夹会覆盖其中全部内容。</p>
+      </details>
+      <details>
+        <summary>怎么取消某个文件夹的授权？</summary>
+        <p>打开设置（⌘,），在"文件夹授权"里选中那个文件夹点"移除"。下次再打开其中的图片会重新询问。</p>
+      </details>
+      <details>
+        <summary>方向键没反应。</summary>
+        <p>确认图片窗口在最前，且没有文本框处于编辑状态。如果状态栏显示"文件夹不可用"，说明磁盘或文件夹暂时不在了，恢复后会自动继续。</p>
+      </details>
+      <details>
+        <summary>能把 LightView 设为默认看图工具吗？</summary>
+        <p>可以。在 Finder 里右键图片，选"显示简介"，在"打开方式"里选 LightView，再点"全部更改"。</p>
+      </details>
+      <details>
+        <summary>移到废纸篓后撤销，提示无法恢复。</summary>
+        <p>沙盒应用无法访问废纸篓。请在 Finder 里打开废纸篓，右键该文件选"放回原处"。</p>
+      </details>
+      <details>
+        <summary>支持哪些格式？</summary>
+        <p>macOS 自身能解码的都支持：JPEG、PNG、HEIC/HEIF、GIF、WebP、TIFF、BMP、大部分相机 RAW 等。GIF、APNG、WebP 动图自动播放。</p>
+      </details>
+      <details>
+        <summary>怎么卸载？</summary>
+        <p>把"应用程序"里的 LightView 拖到废纸篓。要一并清除设置，删除 <kbd>~/Library/Containers/com.lightview.app</kbd>。</p>
+      </details>
+    </div>
+
+    <h2>隐私</h2>
+    <p>LightView 不收集任何数据。详见<a href="/zh/privacy/">隐私政策</a>。</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>LightView</span>
+    <a href="https://github.com/qinghuazs/LightView">GitHub 源码</a>
+    <a href="https://github.com/qinghuazs/LightView/issues">反馈问题</a>
+    <a href="https://github.com/qinghuazs/LightView/releases">更新记录</a>
+    <a href="/zh/privacy/">隐私政策</a>
+    <a href="/zh/support/">支持</a>
+    <span>© 2026 WANG XINGLEI</span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
