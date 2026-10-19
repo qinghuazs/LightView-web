@@ -16,7 +16,7 @@ LightView（macOS 看图工具）的官方网站，纯静态 HTML，部署在 Ve
 ## 上架后要改的
 
 - `assets/site.js` 顶部的 `APP_STORE_URL`：填入 App Store 链接（形如 `https://apps.apple.com/app/id0000000000`），为空时所有"Mac App Store"按钮自动隐藏
-- 各页 `<link rel="canonical">` 用的域名是 `https://lightview.app`，域名不同就全局替换
+- 各页 `<link rel="canonical">` 用的域名是 `https://lightview-web.vercel.app`，绑定自定义域名后全局替换
 
 ## 本地预览
 
