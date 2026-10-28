@@ -2,7 +2,7 @@
   var $ = function (id) { return document.getElementById(id); };
 
   // Mac App Store 链接：上架后填入，例如 https://apps.apple.com/app/id0000000000 ；为空时按钮隐藏
-  var APP_STORE_URL = "";
+  var APP_STORE_URL = "https://apps.apple.com/app/lightviewimagine/id6824725999";
   Array.prototype.forEach.call(document.querySelectorAll(".btn.store"), function (a) { a.setAttribute("href", APP_STORE_URL); });
 
   // 演示窗口：三张示意图循环，状态栏同步
